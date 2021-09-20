@@ -15,6 +15,6 @@ ML models
 
 ## Run the scripts
 
-Download dataset from this link: `https://www.dropbox.com/s/4etkf0sm85r3z7q/compute_dataset.tar.gz?dl=0`.
-Then simply run `sh compute_prediction.sh` to run embedding generation and inference experiments.
+Download dataset from this link: [``compute_dataset``](https://www.dropbox.com/s/4etkf0sm85r3z7q/compute_dataset.tar.gz?dl=0).
+Then simply run `sh compute_prediction.sh` to evaluate embedding generation and inference experiments.
 The accuracy of each model should be shown on the screen.
