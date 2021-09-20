@@ -13,7 +13,7 @@ bolt
 *.log
 *.out
 *.blg
-# *.pickle
+*.pickle
 *.pyc
 algo_id/*.pickle
 scale_out/.ssh/*
