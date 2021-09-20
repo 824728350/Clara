@@ -1,0 +1,22 @@
+# general
+build
+a.out
+bolt
+*.o
+*.swp
+.DS_Store
+
+# Latex
+*.blg
+*.aux
+*.bbl
+*.log
+*.out
+*.blg
+*.pickle
+*.pyc
+algo_id/*.pickle
+scale_out/.ssh/*
+compute_prediction/graphs/*
+# other docs
+related

@@ -1,0 +1,14 @@
+4
+latency_fake: 1660.70869768; time: 14.3950714267; throughput: 13168324.0293; latency: 5355.2; test: 1660.70869768.
+5
+latency_fake: 1395.97013088; time: 14.4856864933; throughput: 15998948.5198; latency: 5253.44; test: 1395.97013088.
+6
+latency_fake: 1209.71501867; time: 14.42817612; throughput: 18790360.2957; latency: 5411.84; test: 1209.71501867.
+7
+latency_fake: 1073.85911148; time: 14.4898329733; throughput: 21480881.9806; latency: 5609.6; test: 1073.85911148.
+8
+latency_fake: 975.755526627; time: 14.48378604; throughput: 24012781.3081; latency: 5564.16; test: 975.755526627.
+9
+latency_fake: 905.192697655; time: 14.48561616; throughput: 26315518.5941; latency: 5886.72; test: 905.192697655.
+10
+latency_fake: 859.030907996; time: 14.5020333733; throughput: 28067951.6371; latency: 6150.4; test: 859.030907996.

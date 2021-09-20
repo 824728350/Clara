@@ -1,0 +1,2 @@
+Makefile:32: /home/yiming/Clara/src/sosp/scale_out/scripts/Makefile.nfp.config: No such file or directory
+make: *** No rule to make target '/home/yiming/Clara/src/sosp/scale_out/scripts/Makefile.nfp.config'.  Stop.

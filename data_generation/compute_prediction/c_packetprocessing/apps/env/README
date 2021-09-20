@@ -1,0 +1,55 @@
+#
+# Copyright (C) 2015-2018,  Netronome Systems, Inc.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# @file           apps/wire/README
+# @brief          README
+#
+
+#
+# Overview
+#
+# This project contains firmware which will program a Netronome NIC
+# to act as a wire. As an example, packets ingressing on port 0 will
+# egress on port 1, or packets ingressing on port 1 will egress on
+# port 0.
+#
+# When packets are received counters will be incremented according
+# to which layer 2 and 3 headers are present in the packet. After
+# this is done, the packet will be egressed.
+#
+
+#
+# Build firmware
+#
+make
+
+#
+# Load and run firmware
+#
+./init/wire.sh restart ./wire.fw
+
+#
+# Counters
+#
+
+# Mac Counters. Packets received will increment the port
+# stats of the port on which it was received. This value is
+# cleared after reading.
+nfp -m mac show port stats 0 0-11
+
+# Application Counters. Display the cntrs_if0 and cntrs_if1 runtime symbols
+# which will increment according to the layer 2 and 3 headers of the received
+# packet.
+nfp-rtsym _cntrs_if*

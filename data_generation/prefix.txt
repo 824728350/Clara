@@ -1,0 +1,19 @@
+#!/bin/sh
+rm -rf output/identifier
+rm -rf output/netronome_original
+rm -rf output/netronome_dbg
+rm -rf output/netronome_training
+rm -rf output/llvm_training
+rm -rf output/llvm_dbg
+rm -rf output/llvm_original
+echo "0" >> output/identifier
+start=$(date "+%s")
+
+click_folder=/home/kuofeng/myGitRepos/click
+root_folder=`realpath ../../`
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <skip_netronome>" >&2
+    exit 1
+fi
+skip_netronome=$1

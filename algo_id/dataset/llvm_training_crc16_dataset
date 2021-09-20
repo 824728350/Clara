@@ -1,0 +1,12 @@
+./crc1.cc.ll-none-0: icmp;br 142,4;
+./crc1.cc.ll-none-4: icmp;br 95,6;
+./crc1.cc.ll-none-6: br 7;
+./crc1.cc.ll-loop-7: phi;phi;phi;phi;shl;load;zext;lshr;trunc;and;or;add;icmp;getelementptr;icmp;xor;select;select;sext;add;select;icmp;br 30,7;
+./crc1.cc.ll-none-30: shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;shl;icmp;xor;select;br 95;
+./crc1.cc.ll-none-95: phi;lshr;lshr;and;or;lshr;and;or;lshr;and;or;lshr;and;or;lshr;and;or;lshr;and;or;lshr;and;or;shl;and;or;shl;and;or;shl;and;or;shl;and;or;shl;and;or;shl;and;or;shl;and;or;shl;or;br 142;
+./crc2.cc.ll-none-0: icmp;br 62,4;
+./crc2.cc.ll-none-4: and;icmp;br 43,7;
+./crc2.cc.ll-none-7: sub;br 9;
+./crc2.cc.ll-loop-9: phi;phi;phi;getelementptr;load;lshr;trunc;xor;lshr;xor;shl;zext;shl;shl;or;xor;xor;getelementptr;load;lshr;trunc;xor;lshr;xor;shl;zext;shl;shl;or;xor;xor;add;icmp;br 43,9;
+./crc2.cc.ll-none-43: phi;phi;phi;icmp;br 62,48;
+./crc2.cc.ll-none-48: load;lshr;trunc;xor;lshr;xor;zext;shl;or;shl;xor;shl;xor;br 62;

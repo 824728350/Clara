@@ -1,0 +1,49 @@
+#
+# Copyright (C) 2015-2018,  Netronome Systems, Inc.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# @file           apps/lab_template/README
+# @brief          README
+#
+
+# Build
+#
+make
+
+#
+# Run
+#
+make fw_start
+ OR
+./scripts/fw_ctl.sh start ./hello_world.fw
+
+#
+# List Run-time visible symbols
+#
+make symbols
+ OR
+nfp-rtsym --list
+
+#
+# Look at thread-local storage for i32.me0 in CTM_40
+#
+nfp-rtsym i32.me0.ctm_40
+
+#
+# Stop
+#
+make fw_stop
+ OR
+./scripts/fw_ctl.sh stop
+

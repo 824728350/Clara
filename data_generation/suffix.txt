@@ -1,0 +1,54 @@
+    echo -n $i > identifier
+    cp $data_folder/test$i.cc ./
+    cp $data_folder/test$i.hh ./
+    clang -O0 -emit-llvm test$i.cc -g -S -o simple_tmp.ll -I $click_folder -DHAVE_IP6 > /dev/null 2>&1
+    if ! [ $? -eq 0 ]
+    then
+        echo "Compile click failed."
+        exit 1
+    fi
+
+    cp simple_tmp.ll $out_folder/test$i.click_org.ll
+    sed -i 's/optnone //g' simple_tmp.ll
+    opt -mem2reg simple_tmp.ll -S -o simple.ll
+    if ! [ $? -eq 0 ]
+    then
+        echo "opt click failed."
+        exit 1
+    fi
+
+    cp simple.ll $out_folder/test$i.click_opt.ll
+    grep "//packet header manipulations" test$i.cc -n | sed "s/:.*//g" > numline
+    grep "// to keep all local variables alive" test$i.cc -n | sed "s/:.*//g" >> numline
+    python3 $working_folder/data_process_3_withBlockInfo.py test$i 0
+    if ! [ $? -eq 0 ]
+    then
+        echo "data_process_3_withBlockInfo failed."
+        exit 1
+    fi
+
+    if [ $skip_netronome -ne 1 ]
+    then
+        cp $data_folder/test$i.c pkt_count.c
+        grep "//packet header manipulations" pkt_count.c -n | sed "s/:.*//g" > numline
+        grep "// to keep all local variables alive" pkt_count.c -n | sed "s/:.*//g" >> numline
+        make > /dev/null 2>&1
+        if ! [ $? -eq 0 ]
+        then
+            echo "netronome make failed."
+            exit 1
+        fi
+        python3 $working_folder/data_process_1_forYarpgenNetronome.py pkt_count
+        if ! [ $? -eq 0 ]
+        then
+            echo "data_process_1_forYarpgenNetronome failed."
+            exit 1
+        fi
+        cp wire_main.list $out_folder/test$i.wire_main.list
+    fi
+done
+cd $working_folder
+python3 ./prepare_processed.py $skip_netronome
+now=$(date "+%s")
+time=$((now-start))
+echo "time used:$time seconds"
