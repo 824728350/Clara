@@ -6,6 +6,8 @@ echo Uncomment preprocess.py and embedding.py provided with LLVM-ASM dataset...
 #echo
 #echo /////////////////////////embedding generation///////////////
 #python3 embedding.py
+echo ///////////////Read from compute_dataset folder//////////////
+cp compute_dataset/* .
 echo
 echo /////////////////////////lstm accuracy//////////////////////
 python3 lstm_test.py
