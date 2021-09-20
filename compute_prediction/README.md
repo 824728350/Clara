@@ -7,15 +7,14 @@ ML models
 
 * `compute_prediction.sh`: Run ML inference models and get testing accuracy (WMAPE) on both synthetic and real click programs.
     * The results could be slightly different from the curret version of paper due to dataset expansion and model retraining efforts
-* `dataset`: A folder including all synthetic data from training data generation pipeline. Serves as the primary training data of all models
-* `testset`: A folder including real click program data to be tested.
 * `models`: A folder including pretrained ML models for quick inference experiments.
 * `preprocess.py`, `embedding.py`: Generate the input embedding and output num of instructions ready to be used. 
 * `*_test.py`: ML inference models ready to be tested.
 * `lstm_train.py` Clara lstm ML training model.
-* `*.pickle` Intermediate data files which contains intermediate python data structures.  
+* `*.pickle` Anonymized data used for training and testing.   
 
 ## Run the scripts
 
-Simply run `sh compute_prediction.sh` to run embedding generation and inference experiments.
+Download dataset from this link: `https://www.dropbox.com/s/4etkf0sm85r3z7q/compute_dataset.tar.gz?dl=0`.
+Then simply run `sh compute_prediction.sh` to run embedding generation and inference experiments.
 The accuracy of each model should be shown on the screen.
