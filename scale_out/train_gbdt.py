@@ -49,9 +49,9 @@ if __name__=='__main__':
     #print(tags_nf)
     #print(pred)
     print("Performance on Click NFs: ")
-    print("DNSProxy optimal: ", tags_nf[-4], ", prediction: ", pred[-4])
-    print("UDPCount optimal: ", tags_nf[-3], ", prediction: ", pred[-3])
-    print("MazuNAT optimal: ", tags_nf[-2], ", prediction: ", pred[-2])
+    print("MazuNAT optimal: ", tags_nf[-4], ", prediction: ", pred[-4])
+    print("DNSProxy optimal: ", tags_nf[-3], ", prediction: ", pred[-3])
+    print("UDPCount optimal: ", tags_nf[-2], ", prediction: ", pred[-2])
     print("WebGen optimal: ", tags_nf[-1], ", prediction: ", pred[-1]) 
     print("")
 
